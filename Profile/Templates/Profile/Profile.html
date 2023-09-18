@@ -1,0 +1,380 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+       *{
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans',sans-serif;
+  box-sizing: border-box;
+}
+.Hero{
+  height: 114vh;
+  width: 100%;
+  margin-bottom: 0px;
+  background-image: url("{% static 'hero-bg.jpg' %}");
+  background-size: cover;
+  background-position: center;
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 45px;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+.Logo{
+  color: white;
+  font-size: 35px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.Logomain{
+  color:rgb(44, 106, 253)
+}
+nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 25px;
+}
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+nav ul li a:hover{
+  color: #304af0;
+  transition: .4s;
+}
+.SubBtn{
+  background-color: rgb(44, 106, 253);
+  color:#fff;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: transform .4s;
+}
+.SubBtn:hover{
+  transform: scale(1.2);
+}
+.Description{
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+}
+.Hit{
+  color: #fff;
+  margin: 20px 0px 20px;
+  font-size: 59px;
+}
+h4{
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+h5{
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+.Newsletter form{
+  width: 380px;
+  max-width: 100%;
+  position: relative;
+}
+.Newsletter form input:first-child{
+  display: inline-block;
+  width: 100%;
+  padding: 14px 130px 14px 15px;
+  border: 2px solid #304af0;
+  outline: none;
+  border-radius: 30px;
+}
+.Newsletter form input:last-child{
+  position: absolute;
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background-color: #304af0;
+  color: #fff;
+  box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
+  top: 6px;
+  right: 6px;
+}
+.About{
+  width: 100%;
+  padding: 100px 0px;
+  background-color: #858585;
+}
+.About img{
+  height: auto;
+  width: 430px;
+}
+.Abouttext{
+  width: 550px;
+}
+.Aboutcontent{
+  width: 1130px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Abouttext h3{
+  color: white;
+  font-size: 75px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.Abouttext h1{
+  color: white;
+  letter-spacing: 2px;
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}
+.Abouttext p{
+  color: #fcfcfc;
+  letter-spacing: 1px;
+  line-height: 28px;
+  font-size: 18px;
+  margin-bottom: 45px;
+}
+.Letsubmit{
+  background-color: #304af0;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  font-weight: bold;
+  padding: 13px 30px;
+  border-radius: 30px;
+  transition: .4s;
+}
+.Letsubmit:hover{
+  background-color: transparent;
+  border: 2px solid #304af0;
+  cursor: pointer;
+}
+.Service{
+  background: #858585;
+  width: 100%;
+  padding: 100px 0px;
+}
+.Servicetitle{
+  display: flex;
+}
+.Servicetitle h2{
+  color: white;
+  font-size: 50px;
+  width: 1130px;
+  margin: 30px auto;
+  text-align: center;
+}
+.Servicebox{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  min-height: 400px;
+}
+.Servicecard{
+  height: 300px;
+  width: 300px;
+  padding: 20px 35px;
+  background: #becbe7;
+  border-radius: 20px;
+  margin: 15px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.Servicecard i{
+  font-size: 50px;
+  display: block;
+  text-align: center;
+  margin: 25px 0px;
+  color: #0021f9;
+}
+.Servicepra p{
+  color:rgb(38, 37, 36);
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 13px;
+}
+.Contactme{
+  width: 100%;
+  height: 100px;
+  background: #858585;
+  display: flex;
+  justify-content: center;
+}
+.Contactme p{
+  color: rgb(38, 37, 36);
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+footer{
+  position: relative;
+  width: 100%;
+  height: 260px;
+  background: #d5cece;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer p:nth-child(1){
+  font-size: 25px;
+  color: rgb(36, 67, 245);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+footer p:nth-child(2){
+  color: rgb(36, 67, 245);
+  font-size: 17px;
+  width: 500px;
+  text-align: center;
+  line-height: 25px;
+}
+.Social{
+  display: flex;
+}
+.Social a{
+  width: 45px;
+  height: 45px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: #1100f9;
+  border-radius: 50%;
+  margin: 22px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+.Social a:hover{
+  transform: scale(1.3);
+  transition: .3s;
+}
+.End{
+  position: absolute;
+  color: #1100f9;
+  bottom: 35px;
+  font-size: 14px;
+} 
+    </style>
+</head>
+<body>
+    <div class="Hero">
+        <nav>
+        <h2 class="Logo">My<span class="Logomain">Profile</span></h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Me</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Skill</a></li>
+          <li><a href="#">Contact Me</a></li>
+        </ul>
+        <a href="#" class="SubBtn">Subscribe</a>
+      </nav>
+    </div>
+    <!-- Content -->
+    <div class="Description">
+      <h4>Hi, I'm <span class="Hit"><span class="Logomain">Divya Benjamin</span></span></h4>
+      <h5>and I'm a Web designer.</h5>
+      <div class="Newsletter">
+        <form>
+          <input type="email" name="email" id="mail" placeholder="Enter Your Email"/>
+          <input type="submit" name="submit" value="Let's Start"/>
+        </form>
+      </div>
+    </div>
+   </div>
+
+   <!--About Us -->
+   <div class="About">
+    <div class="Aboutcontent">
+      <img src="{% static 'me.jpg' %}" alt="Divya"/>
+      <div class="Abouttext">
+        <h3>About Me</h3>
+        <h1>Developer<span class="Logomain">& Designer</span></h1>
+        <p>I am Divya Benjamin, currently living in Perumbavoor,Ernakulam. I have completed my post graduation in MCA from Nirmala College,Muvattupuzha under Mahatma Gandhi University.
+           And I had done graduation in BCA from Mahatma Gandhi University.I'm very honest in my work. God has given everyone the potential and it is in our hands how we use it. We weave
+           our present to see a beautiful design in the future. As a role model, I always look upon the freedom fighters as my inspiration and I always dream to be like them.
+          I am interested in front-end web developer. I can provide clean code and also make the website more & more interactive.
+          A responsive design makes your website accessible to all users, regardless of their device.
+        </p>
+        <button type="button" class="Letsubmit">Let's Talk</button>
+      </div>
+    </div>
+   </div>
+
+   <!-- service -->
+   <div class="Service">
+    <div class="Servicetitle">
+      <h2>My Services</h2>
+      <div class="Servicebox">
+        <div class="Servicecard">
+          <i class="fa-solid fa-layer-group"></i>
+          <h5>Web Development</h5>
+          <div class="Servicepra">
+            <p>The website design should be easy to navigate and the menu items should easily accessible from any page.</p>
+          <button type="button"class="Letsubmit">Read More</button>
+          </div>
+        </div>
+      </div>
+      <div class="Servicebox">
+        <div class="Servicecard">
+        <i class="fa-solid fa-person-military-pointing"></i>
+          <h5>Web Friendly</h5>
+          <div class="Servicepra">
+            <p>No matter how informative, beautiful, and easy to use your website design is, it's useless unless it's web-friendly.</p>
+          <button type="button"class="Letsubmit">Read More</button>
+          </div>
+        </div>
+      </div>
+      <div class="Servicebox">
+        <div class="Servicecard">
+        <i class="fa-solid fa-calendar-week"></i>
+          <h5>Visual Design</h5>
+          <div class="Servicepra">
+            <p>People are visually oriented creatures, and utilizing great graphics is a good way to make your website more appealing.</p>
+          <button type="button"class="Letsubmit">Read More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+   <!-- Contact-->
+   <div class="Contactme">
+    <p>Let Me Get You A beautiful Website.</p>
+    <button type="button" class="Letsubmit">Hire Me</button>
+   </div>
+
+   <!-- Footer-->
+   <footer>
+    <p>Divya Benjamin</p>
+    <p>For more informations - please click on the link:</p>
+    <div class="Social">
+      <a href="https://www.linkedin.com/in/"><i class="fa-brands fa-linkedin"></i></a>&nbsp;&nbsp;
+      <a href="https://www.google.com/"><i class="fa-brands fa-google"></i></a>
+    </div>
+    <p class="End">Copyright&copy; By Divya Benjamin</p>
+   </footer>
+  </div>
+</body>
+</html>
